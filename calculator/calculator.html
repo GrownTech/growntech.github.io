@@ -60,6 +60,23 @@
 
     <!-- Shoping Cart Section Begin -->
     <section class="shoping-cart spad">
+		<!--
+		<div class="row">
+                <div class="col-lg-12">
+                    <div class="shoping__cart__btns">
+						<input type="text" id="activationcode" name="activationcode">
+						<input class="btn btn-primary" onClick="Activate()" type="button" value="Activate">
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="shoping__checkout">
+                        <h3>Aggregate impact value</h3>
+						<p>Result :<span id="activationresult"></p>
+                    </div>
+                </div>
+            </div>
+			-->
+			
         <div class="container">
             <div class="row">
 				<h2>Future Food System Calculator</h2>
@@ -152,7 +169,7 @@
 								</tr>
 								<tr>
 									<td class="shoping__cart__item">
-										<img width="200px" src="../assets/images/collection/Food Retail(Supermarket).png" alt="">
+										<img width="200px" src="../assets/images/collection/FoodRetail_Supermarket.png" alt="">
 										<p>PS/day(I):0, PS/day(L):612.752, <br />
 											PS/day(R):0, Waste(KG) daily:36.25</p>
 									</td>
@@ -199,7 +216,7 @@
 								
 								<tr>
 									<td class="shoping__cart__item">
-										<img width="200px" src="../assets/images/collection/Food Retail(Supermarket).png" alt="">
+										<img width="200px" src="../assets/images/collection/Highrise.png" alt="">
 										<p>PS/day(I):0, PS/day(L):0 <br />
 											PS/day(R):0, Waste(KG) daily:0</p>
 									</td>
@@ -222,7 +239,7 @@
 								</tr>
 								<tr>
 									<td class="shoping__cart__item">
-										<img width="200px" src="../assets/images/collection/Food Retail(Supermarket).png" alt="">
+										<img width="200px" src="../assets/images/collection/Lowrise.png" alt="">
 										<p>PS/day(I):0, PS/day(L):0 <br />
 											PS/day(R):0, Waste(KG) daily:0</p>
 									</td>
@@ -246,7 +263,7 @@
 								
 								<tr>
 									<td class="shoping__cart__item">
-										<img width="200px" src="../assets/images/collection/Food Retail(Supermarket).png" alt="">
+										<img width="200px" src="../assets/images/collection/Civicmarket_RevitalizedMarket.png" alt="">
 										<p>PS/day(I):14400, PS/day(L):0 <br />
 											PS/day(R):0, Waste(KG) daily:1000</p>
 									</td>
@@ -269,7 +286,7 @@
 								</tr>
 								<tr>
 									<td class="shoping__cart__item">
-										<img width="200px" src="../assets/images/collection/Food Retail(Supermarket).png" alt="">
+										<img width="200px" src="../assets/images/collection/Cantoneseshop_house.png" alt="">
 										<p>PS/day(I):400, PS/day(L):0 <br />
 											PS/day(R):0, Waste(KG) daily:20</p>
 									</td>
@@ -292,7 +309,7 @@
 								</tr>
 								<tr>
 									<td class="shoping__cart__item">
-										<img width="200px" src="../assets/images/collection/Food Retail(Supermarket).png" alt="">
+										<img width="200px" src="../assets/images/collection/TinHau_Temple.png" alt="">
 										<p>PS/day(I):0, PS/day(L):0 <br />
 											PS/day(R):0, Waste(KG) daily:0</p>
 									</td>
@@ -316,7 +333,7 @@
 								
 								<tr>
 									<td class="shoping__cart__item">
-										<img width="200px" src="../assets/images/collection/Food Retail(Supermarket).png" alt="">
+										<img width="200px" src="../assets/images/collection/CommunityCentre.png" alt="">
 										<p>PS/day(I):0, PS/day(L):0 <br />
 											PS/day(R):0, Waste(KG) daily:0</p>
 									</td>
@@ -453,7 +470,7 @@
 								
 								<tr>
 									<td class="shoping__cart__item">
-										<img width="200px" src="../assets/images/collection/Food Retail(Supermarket).png" alt="">
+										<img width="200px" src="../assets/images/collection/Parks.png" alt="">
 										<p>PS/day(I):0, PS/day(L):0 <br />
 											PS/day(R):0, Waste(KG) daily:0</p>
 									</td>
@@ -497,7 +514,7 @@
 								</tr>
 								<tr>
 									<td class="shoping__cart__item">
-										<img width="200px" src="../assets/images/collection/Food Retail(Supermarket).png" alt="">
+										<img width="200px" src="../assets/images/collection/Solarpanel.png" alt="">
 										<p>PS/day(I):0, PS/day(L):10 <br />
 											PS/day(R):0, Waste(KG) daily:0</p>
 									</td>
@@ -519,7 +536,7 @@
 								</tr>
 								<tr>
 									<td class="shoping__cart__item">
-										<img width="200px" src="../assets/images/collection/Food Retail(Supermarket).png" alt="">
+										<img width="200px" src="../assets/images/collection/Tree.png" alt="">
 										<p>PS/day(I):0, PS/day(L):10 <br />
 											PS/day(R):0, Waste(KG) daily:0</p>
 									</td>
@@ -550,7 +567,7 @@
                     <div class="shoping__cart__btns">
                         <!--<a href="#" class="primary-btn site-btn">Compute</a>-->
 						<input class="btn btn-primary" onClick="Compute()" type="button" value="Compute">
-						<input class="btn btn-primary" type="reset" value="Reset">
+						<input class="btn btn-primary" onClick="Reset()" type="reset" value="Reset">
                     </div>
                 </div>
                 <div class="col-lg-8">
@@ -591,119 +608,293 @@
     <script src="js/main.js"></script>
 	
 	<script>
+	var total_i = 0;
+	var total_l = 0;
+	var total_r = 0;
+	var total_waste = 0;
 	function handleValueChange() {
 		var x = document.getElementById("blockcode1_no").value;
+		total_i = 0 + 0 * x;
+		total_l = 0 + 0 * x;
+		total_r = 0 + 0 * x;
+		total_waste = 0 + 0 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 0 * x;
 	}
 	function handleValue2Change() {
 		var x = document.getElementById("blockcode2_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 0 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 0 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 0 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal2_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 0 * x;
 	}
 	function handleValue3Change() {
 		var x = document.getElementById("blockcode3_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 0 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 0 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 0 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal3_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 0 * x;
 	}
 	function handleValue4Change() {
 		var x = document.getElementById("blockcode4_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 0 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 612.752 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 36.25 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal4_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 612.752 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 36.25 * x;
 	}
 	function handleValue5Change() {
 		var x = document.getElementById("blockcode5_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 600 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 0 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 20 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal5_impact").innerHTML = "PS/day(I): " + 600 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 20 * x;
 	}
 	function handleValue6Change() {
 		var x = document.getElementById("blockcode6_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 0 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 0 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 0 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal6_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 0 * x;
 	}
 	function handleValue7Change() {
 		var x = document.getElementById("blockcode7_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 0 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 0 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 0 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal7_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 0 * x;
 	}
 	function handleValue8Change() {
 		var x = document.getElementById("blockcode8_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 14400 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 0 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 1000 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal8_impact").innerHTML = "PS/day(I): " + 14400 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 1000 * x;
 	}
 	function handleValue9Change() {
 		var x = document.getElementById("blockcode9_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 400 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 0 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 20 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal9_impact").innerHTML = "PS/day(I): " + 400 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 20 * x;
 	}
 	function handleValue10Change() {
 		var x = document.getElementById("blockcode10_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 0 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 0 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 0 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal10_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 0 * x;
 	}
 	function handleValue11Change() {
 		var x = document.getElementById("blockcode11_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 0 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 0 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 0 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal11_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 0 * x;
 	}
 	function handleValue12Change() {
 		var x = document.getElementById("blockcode12_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 0 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 0 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 0 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal12_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 5333 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 0 * x;
 	}
 	function handleValue13Change() {
 		var x = document.getElementById("blockcode13_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 43.555 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 0 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 61.67 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal13_impact").innerHTML = "PS/day(I): " + 43.555 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 61.67 * x;
 	}
 	function handleValue14Change() {
 		var x = document.getElementById("blockcode14_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 0 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 0 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 0 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal14_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 0 * x;
 	}
 	function handleValue15Change() {
 		var x = document.getElementById("blockcode15_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 0 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 0 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 30 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 0 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal15_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 30 * x + "<br/>" + "Waste(KG) daily: " + 0 * x;
 	}
 	function handleValue16Change() {
 		var x = document.getElementById("blockcode16_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 0 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 1134 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 0 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal16_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 1134 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 0 * x;
 	}
 	function handleValue17Change() {
 		var x = document.getElementById("blockcode17_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 0 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 0 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 0 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal17_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 0 * x;
 	}
 	function handleValue18Change() {
 		var x = document.getElementById("blockcode18_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 0 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 10 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 0 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal18_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 10 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 0 * x;
 	}
 	function handleValue19Change() {
 		var x = document.getElementById("blockcode19_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 0 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 10 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 0 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal19_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 10 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 0 * x;
 	}
 	function handleValue20Change() {
 		var x = document.getElementById("blockcode20_no").value;
+		total_i = parseInt(localStorage.getItem("total_i")) + 0 * x;
+		total_l = parseInt(localStorage.getItem("total_l")) + 10 * x;
+		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 0 * x;
+		localStorage.setItem("total_i", total_i);
+		localStorage.setItem("total_l", total_l);
+		localStorage.setItem("total_r", total_r);
+		localStorage.setItem("total_waste", total_waste);
 		document.getElementById("subtotal20_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 10 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 0 * x;
 	}
 	</script>
 	
 	<script>
-		function Compute()
-		{
-			/*
-			blockcode1_no = document.getElementById("blockcode1_no").value;
-			blockcode2_no = document.getElementById("blockcode2_no").value;
-			blockcode3_no = document.getElementById("blockcode3_no").value;
+	function Compute()
+	{
+		result = localStorage.getItem("total_i");
+		document.getElementById("result").innerHTML = result;
 			
-			result = blockcode1_no * 0 + blockcode2_no * 0 + blockcode3_no * 0;
-			result1 = blockcode1_no * 0 + blockcode2_no * 0 + blockcode3_no * 0;
-			result2 = blockcode1_no * 0 + blockcode2_no * 0 + blockcode3_no * 0;
-			result3 = blockcode1_no * 38297.28 + blockcode2_no * 612.752 + blockcode3_no * 36.25;
-				
-			document.getElementById("result").innerHTML = result;
-			document.getElementById("result1").innerHTML = result1;
-			document.getElementById("result2").innerHTML = result2;
-			document.getElementById("result3").innerHTML = result3;
-			*/
-			result = 345;
-			document.getElementById("result").innerHTML = result;
-			
-			result1 = 11;
-			document.getElementById("result1").innerHTML = result1;
-			
-			result2 = 45;
-			document.getElementById("result2").innerHTML = result2;
-			
-			result3 = 34;
-			document.getElementById("result3").innerHTML = result3;
+		result1 = localStorage.getItem("total_l");
+		document.getElementById("result1").innerHTML = result1;
+		
+		result2 = localStorage.getItem("total_r");
+		document.getElementById("result2").innerHTML = result2;
+		
+		result3 = localStorage.getItem("total_waste");
+		document.getElementById("result3").innerHTML = result3;
+	}
+	</script>
+	
+	<script>
+	function Reset() {
+		total_i = 0;
+		total_l = 0;
+		total_r = 0;
+		total_waste = 0;
+		localStorage.setItem("total_i", total_waste);
+		localStorage.setItem("total_l", total_waste);
+		localStorage.setItem("total_r", total_waste);
+		localStorage.setItem("total_waste", total_waste);
+	}
+	</script>
+		
+	<script>
+	function Activate() {
+		var x = document.getElementById("activationcode").value;
+		//document.getElementById("activationresult").innerHTML = x;
+		if (x == "ftc2022") {
+			//result = 'positive';
+			document.getElementById("activationresult").innerHTML = x;
 		}
-		</script>
+		
+	}
+	</script>
 
 
 </body>
