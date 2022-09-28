@@ -75,13 +75,21 @@
                     </div>
                 </div>
             </div>
-			-->
-			
-        <div class="container">
-            <div class="row">
+			-->	
+		
+		<div class="container">
+			<div class="row">
 				<h2>Future Food System Calculator</h2>
-            </div>
-			 <div class="row mt-5">
+			</div>
+			<div class="row mt-5">
+                <div class="col-lg-12">
+					<input type="text" id="code" name="code">
+					<button class="btn btn-primary" id="btn">Please enter your activate code to begin</button>
+				</div>
+			</div>
+		</div>
+        <div id="activationresult1" class="container">
+			<div class="row mt-5">
                 <div class="col-lg-12">
 					<form>
                     <div class="shoping__cart__table">
@@ -883,17 +891,23 @@
 		localStorage.setItem("total_waste", total_waste);
 	}
 	</script>
-		
+	
 	<script>
-	function Activate() {
-		var x = document.getElementById("activationcode").value;
-		//document.getElementById("activationresult").innerHTML = x;
-		if (x == "ftc2022") {
-			//result = 'positive';
-			document.getElementById("activationresult").innerHTML = x;
+	const activationresult1 = document.getElementById('activationresult1');
+	const btn = document.getElementById('btn');
+	const x = document.getElementById("code");
+	activationresult1.style.display = 'none';
+	
+	btn.addEventListener('click', function handleClick() {
+		if (activationresult1.style.display === 'none') {
+			if (x.value === "ftc2022") {
+				activationresult1.style.display = 'block';
+				//btn.textContent = 'Hide div';
+				btn.style.display = 'none';
+				x.style.display = 'none';
+			}
 		}
-		
-	}
+	});
 	</script>
 
 
