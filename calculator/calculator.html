@@ -551,15 +551,53 @@
             </div>
 			
             <div class="row mt-5">
-                <div style="background-color:#FCBE00;opacity: 0.75;" class="col-lg-4">
+                <div style="background-color:#FCBE00;opacity: 0.75;" class="col-4">
 					<br/>
                     <h3 style="font-weight: bold;">Food Accessibility Indicator</h3><br/>
-					<p style="font-size:18px;color:#143C39";>Population served daily by imported foods : <span id="result"></p>
-					<p style="font-size:18px;color:#143C39";>Population served daily by local foods : <span id="result1"></p>
-					<p style="font-size:18px;color:#143C39";>Population served daily by rescued foods : <span id="result2"></p>
-					<p style="font-size:18px;color:#143C39";>Waste produced daily (kg) : <span id="result3"></p>
+					<div class="row">
+						<div class="col-lg-6">
+							<p style="font-size:18px;color:#143C39";>Population served daily by imported foods</p>
+							<p style="font-size:18px;color:#143C39";>Population served daily by local foods</p>
+							<p style="font-size:18px;color:#143C39";>Population served daily by rescued foods</p>
+							<p style="font-size:18px;color:#143C39";>Waste produced daily (kg)</p>
+						</div>
+						<div class="col-lg-6">
+							<table border="1">
+								<tr>
+									<td><span id="result"></td>
+									<td><span id="result1"></td>
+									<td><span id="result2"></td>
+									<td><span id="result3"><span id="result4"></td>
+								</tr>
+							</table>
+							<table border="1">
+								<tr>
+									<td><span id="total_l_result"></td>
+									<td><span id="total_l_result1"></td>
+									<td><span id="total_l_result2"></td>
+									<td><span id="total_l_result3"><span id="total_l_result4"></td>
+								</tr>
+							</table>
+							<table border="1">
+								<tr>
+									<td><span id="total_r_result"></td>
+									<td><span id="total_r_result1"></td>
+									<td><span id="total_r_result2"></td>
+									<td><span id="total_r_result3"><span id="total_r_result4"></td>
+								</tr>
+							</table>
+							<table border="1">
+								<tr>
+									<td><span id="total_waste_result"></td>
+									<td><span id="total_waste_result1"></td>
+									<td><span id="total_waste_result2"></td>
+									<td><span id="total_waste_result3"><span id="total_waste_result4"></td>
+								</tr>
+							</table>
+						</div>
+					</div>
                 </div>
-				<div class="col-lg-8">
+				<div class="col-8">
 					<img width="1024px" src="Rethink 2022 submission.pptx1024_22.png" />
 				</div>
             </div>
@@ -829,20 +867,49 @@
 	function Compute()
 	{
 		result = localStorage.getItem("total_i");
-		const num1 = 12345;
-		const length1 = num1.toString().length;
-		let firstdigit = num1.substring(1, 4);
+		let firstdigit = result.toString().substring(0, 1).fontsize(30);
+		let seconddigit = result.toString().substring(1, 2).fontsize(30);
+		let thirddigit = result.toString().substring(2, 3).fontsize(30);
+		let forthdigit = result.toString().substring(3, 4).fontsize(30);
 
-		document.getElementById("result").innerHTML = firstdigit + " pax";
+		document.getElementById("result").innerHTML = firstdigit;
+		document.getElementById("result1").innerHTML = seconddigit;
+		document.getElementById("result2").innerHTML = thirddigit;
+		document.getElementById("result3").innerHTML = forthdigit;
+		document.getElementById("result4").innerHTML = " pax";
 			
 		result1 = localStorage.getItem("total_l");
-		document.getElementById("result1").innerHTML = Math.round(result1) + " pax";
+		let total_l_firstdigit = result1.toString().substring(0, 1).fontsize(30);
+		let total_l_seconddigit = result1.toString().substring(1, 2).fontsize(30);
+		let total_l_thirddigit = result1.toString().substring(2, 3).fontsize(30);
+		let total_l_forthdigit = result1.toString().substring(3, 4).fontsize(30);
+		document.getElementById("total_l_result").innerHTML = total_l_firstdigit;
+		document.getElementById("total_l_result1").innerHTML = total_l_seconddigit;
+		document.getElementById("total_l_result2").innerHTML = total_l_thirddigit;
+		document.getElementById("total_l_result3").innerHTML = total_l_forthdigit;
+		document.getElementById("total_l_result4").innerHTML = " pax";
 		
 		result2 = localStorage.getItem("total_r");
-		document.getElementById("result2").innerHTML = Math.round(result2) + " pax";
+		let total_r_firstdigit = result2.toString().substring(0, 1).fontsize(30);
+		let total_r_seconddigit = result2.toString().substring(1, 2).fontsize(30);
+		let total_r_thirddigit = result2.toString().substring(2, 3).fontsize(30);
+		let total_r_forthdigit = result2.toString().substring(3, 4).fontsize(30);
+		document.getElementById("total_r_result").innerHTML = total_r_firstdigit;
+		document.getElementById("total_r_result1").innerHTML = total_r_seconddigit;
+		document.getElementById("total_r_result2").innerHTML = total_r_thirddigit;
+		document.getElementById("total_r_result3").innerHTML = total_r_forthdigit;
+		document.getElementById("total_r_result4").innerHTML = " pax";
 		
 		result3 = localStorage.getItem("total_waste");
-		document.getElementById("result3").innerHTML = Math.round(result3) + " kg";
+		let total_waste_firstdigit = result3.toString().substring(0, 1).fontsize(30);
+		let total_waste_seconddigit = result3.toString().substring(1, 2).fontsize(30);
+		let total_waste_thirddigit = result3.toString().substring(2, 3).fontsize(30);
+		let total_waste_forthdigit = result3.toString().substring(3, 4).fontsize(30);
+		document.getElementById("total_waste_result").innerHTML = total_waste_firstdigit;
+		document.getElementById("total_waste_result1").innerHTML = total_waste_seconddigit;
+		document.getElementById("total_waste_result2").innerHTML = total_waste_thirddigit;
+		document.getElementById("total_waste_result3").innerHTML = total_waste_forthdigit;
+		document.getElementById("total_waste_result4").innerHTML = " kg";
 	}
 	</script>
 	
