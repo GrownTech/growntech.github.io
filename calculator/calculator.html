@@ -604,7 +604,7 @@
 					</div>
 					<div class="row">
 						<div class="col-5">
-							<p style="font-size:18px;color:#143C39";>Waste daily (kg) equivalent to no. taxi</p>
+							<p style="font-size:18px;color:#143C39";>No of mini van that Food  Waste (kg) fillup</p>
 						</div>
 						<div class="col-7">
 							<table border="1">
@@ -929,6 +929,9 @@
 		}
 		
 		document.getElementById("result").innerHTML = firstdigit;
+		
+		
+		document.getElementById("result").innerHTML = firstdigit;
 		document.getElementById("result1").innerHTML = seconddigit;
 		document.getElementById("result2").innerHTML = thirddigit;
 		document.getElementById("result3").innerHTML = forthdigit;
@@ -1016,7 +1019,7 @@
 		//document.getElementById("total_r_result4").innerHTML = " pax";
 		
 		total_waste_result3 = parseInt(localStorage.getItem("total_waste"));
-		let total_waste_taxi = (total_waste_result3 / 1400);
+		let total_waste_taxi = (total_waste_result3 / 900);
 		total_waste_taxi = parseInt(total_waste_taxi);
 
 		let total_waste_result_length = total_waste_taxi.toString().length;
@@ -1058,11 +1061,7 @@
 	</script>
 	
 	<script>
-	function Reset() {
-	
-		
-		document.getElementById("blockcode19_no").value = 0;
-		
+	function Reset() {		
 		total_i = 0;
 		total_l = 0;
 		total_r = 0;
