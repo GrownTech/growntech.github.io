@@ -981,7 +981,7 @@
 		
 		
 		let total_r_result_percentage = (total_r_result2 / 4000) * 100;
-		total_r_result_percentage = parseInt(total_r_result_percentage);
+		total_r_result_percentage = Math.ceil(total_r_result_percentage);
 		let total_r_result_length = total_r_result_percentage.toString().length;
 		let total_r_firstdigit = '0'.fontsize(20);
 		let total_r_seconddigit = '0'.fontsize(20);
