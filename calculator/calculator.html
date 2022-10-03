@@ -532,7 +532,7 @@
 										&nbsp;
 									</td>
 									<td class="shoping__cart__quantity">
-										<input style="background-color:#143C39;" class="btn btn-primary" onClick="Reset()" type="reset" value="Reset">
+										<input style="background-color:#143C39;" class="btn btn-primary" onClick="Reset()" type="button" value="Reset">
 									</td>
 									<td>
 										<input style="color:#143C39;background-color:#FCBE00;" class="btn btn-primary" onClick="Compute()" type="button" value="Compute">
@@ -556,7 +556,7 @@
                     <h3 style="font-weight: bold;">Food Accessibility Index</h3><br/>
 					<div class="row">
 						<div class="col-5">
-							<p style="font-size:18px;color:#143C39";>Population served daily by imported foods (%)</p>
+							<p style="font-size:18px;color:#143C39;">Population served daily by imported foods (%)</p>
 						</div>
 						<div class="col-7">
 							<table border="1">
@@ -572,7 +572,7 @@
 					</div>
 					<div class="row">
 						<div class="col-5">
-							<p style="font-size:18px;color:#143C39";>Population served daily by local foods (%)</p>
+							<p style="font-size:18px;color:#143C39;">Population served daily by local foods (%)</p>
 						</div>
 						<div class="col-7">
 							<table border="1">
@@ -588,7 +588,7 @@
 					</div>
 					<div class="row">
 						<div class="col-5">
-							<p style="font-size:18px;color:#143C39";>Population served daily by rescued foods (%)</p>
+							<p style="font-size:18px;color:#143C39;">Population served daily by rescued foods (%)</p>
 						</div>
 						<div class="col-7">
 							<table border="1">
@@ -604,7 +604,7 @@
 					</div>
 					<div class="row">
 						<div class="col-5">
-							<p style="font-size:18px;color:#143C39";>No of mini van that Food  Waste (kg) fill up</p>
+							<p style="font-size:18px;color:#143C39;">Number of mini van required to transport the food waste</p>
 						</div>
 						<div class="col-7">
 							<table border="1">
@@ -1062,6 +1062,47 @@
 	
 	<script>
 	function Reset() {		
+		
+		document.getElementById("subtotal_impact").innerHTML = "0";
+		document.getElementById("subtotal2_impact").innerHTML = "0";
+		document.getElementById("subtotal3_impact").innerHTML = "0";
+		document.getElementById("subtotal4_impact").innerHTML = "0";
+		document.getElementById("subtotal5_impact").innerHTML = "0";
+		document.getElementById("subtotal6_impact").innerHTML = "0";
+		document.getElementById("subtotal7_impact").innerHTML = "0";
+		document.getElementById("subtotal8_impact").innerHTML = "0";
+		document.getElementById("subtotal9_impact").innerHTML = "0";
+		document.getElementById("subtotal10_impact").innerHTML = "0";
+		document.getElementById("subtotal11_impact").innerHTML = "0";
+		document.getElementById("subtotal12_impact").innerHTML = "0";
+		document.getElementById("subtotal13_impact").innerHTML = "0";
+		document.getElementById("subtotal14_impact").innerHTML = "0";
+		document.getElementById("subtotal15_impact").innerHTML = "0";
+		document.getElementById("subtotal16_impact").innerHTML = "0";
+		document.getElementById("subtotal17_impact").innerHTML = "0";
+		document.getElementById("subtotal18_impact").innerHTML = "0";
+		document.getElementById("subtotal19_impact").innerHTML = "0";
+		
+		document.getElementById("blockcode1_no").value = "0";
+		document.getElementById("blockcode2_no").value = "0";
+		document.getElementById("blockcode3_no").value = "0";
+		document.getElementById("blockcode4_no").value = "0";
+		document.getElementById("blockcode5_no").value = "0";
+		document.getElementById("blockcode6_no").value = "0";
+		document.getElementById("blockcode7_no").value = "0";
+		document.getElementById("blockcode8_no").value = "0";
+		document.getElementById("blockcode9_no").value = "0";
+		document.getElementById("blockcode10_no").value = "0";
+		document.getElementById("blockcode11_no").value = "0";
+		document.getElementById("blockcode12_no").value = "0";
+		document.getElementById("blockcode13_no").value = "0";
+		document.getElementById("blockcode14_no").value = "0";
+		document.getElementById("blockcode15_no").value = "0";
+		document.getElementById("blockcode16_no").value = "0";
+		document.getElementById("blockcode17_no").value = "0";
+		document.getElementById("blockcode18_no").value = "0";
+		document.getElementById("blockcode19_no").value = "0";
+
 		total_i = 0;
 		total_l = 0;
 		total_r = 0;
