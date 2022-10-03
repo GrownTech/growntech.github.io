@@ -483,7 +483,7 @@
 								
 								<tr>
 									<td class="shoping__cart__item">
-										<img width="200px" src="../assets/images/collection/SolarPanel.png" alt="">
+										<img width="200px" src="../assets/images/collection/Solarpanel.png" alt="">
 										<p>PS/day(I):0, PS/day(L):0 <br />
 											PS/day(R):0, Waste(KG) daily:0</p>
 									</td>
@@ -556,7 +556,7 @@
                     <h3 style="font-weight: bold;">Food Accessibility Index</h3><br/>
 					<div class="row">
 						<div class="col-5">
-							<p style="font-size:18px;color:#143C39";>Population served daily by imported foods (pax)</p>
+							<p style="font-size:18px;color:#143C39";>Population served daily by imported foods (%)</p>
 						</div>
 						<div class="col-7">
 							<table border="1">
@@ -574,7 +574,7 @@
 					</div>
 					<div class="row">
 						<div class="col-5">
-							<p style="font-size:18px;color:#143C39";>Population served daily by local foods (pax)</p>
+							<p style="font-size:18px;color:#143C39";>Population served daily by local foods (%)</p>
 						</div>
 						<div class="col-7">
 							<table border="1">
@@ -592,7 +592,7 @@
 					</div>
 					<div class="row">
 						<div class="col-5">
-							<p style="font-size:18px;color:#143C39";>Population served daily by rescued foods (pax)</p>
+							<p style="font-size:18px;color:#143C39";>Population served daily by rescued foods (%)</p>
 						</div>
 						<div class="col-7">
 							<table border="1">
@@ -897,7 +897,9 @@
 	function Compute()
 	{
 		result = parseInt(localStorage.getItem("total_i"));
-		let result_length = result.toString().length;
+		let result_percentage = (result / 4000) * 100;
+		result_percentage = parseInt(result_percentage);
+		let result_length = result_percentage.toString().length;
 		let firstdigit = '0'.fontsize(20);
 		let seconddigit = '0'.fontsize(20);
 		let thirddigit = '0'.fontsize(20);
@@ -914,32 +916,32 @@
 		}
 		*/
 		if (result_length == '1') {
-			seventhdigit = result.toString().substring(0, 1).fontsize(20);
+			seventhdigit = result_percentage.toString().substring(0, 1).fontsize(20);
 		} else if (result_length == '2') {
-			sixthdigit = result.toString().substring(0, 1).fontsize(20);
-			seventhdigit = result.toString().substring(1, 2).fontsize(20);
+			sixthdigit = result_percentage.toString().substring(0, 1).fontsize(20);
+			seventhdigit = result_percentage.toString().substring(1, 2).fontsize(20);
 		} else if (result_length == '3') {
-			fifthdigit = result.toString().substring(0, 1).fontsize(20);
-			sixthdigit = result.toString().substring(1, 2).fontsize(20);
-			seventhdigit = result.toString().substring(2, 3).fontsize(20);
+			fifthdigit = result_percentage.toString().substring(0, 1).fontsize(20);
+			sixthdigit = result_percentage.toString().substring(1, 2).fontsize(20);
+			seventhdigit = result_percentage.toString().substring(2, 3).fontsize(20);
 		} else if (result_length == '4') {
-			forthdigit = result.toString().substring(0, 1).fontsize(20);
-			fifthdigit = result.toString().substring(1, 2).fontsize(20);
-			sixthdigit = result.toString().substring(2, 3).fontsize(20);
-			seventhdigit = result.toString().substring(3, 4).fontsize(20);
+			forthdigit = result_percentage.toString().substring(0, 1).fontsize(20);
+			fifthdigit = result_percentage.toString().substring(1, 2).fontsize(20);
+			sixthdigit = result_percentage.toString().substring(2, 3).fontsize(20);
+			seventhdigit = result_percentage.toString().substring(3, 4).fontsize(20);
 		} else if (result_length == '5') {
-			thirddigit = result.toString().substring(0, 1).fontsize(20);
-			forthdigit = result.toString().substring(1, 2).fontsize(20);
-			fifthdigit = result.toString().substring(2, 3).fontsize(20);
-			sixthdigit = result.toString().substring(3, 4).fontsize(20);
-			seventhdigit = result.toString().substring(4, 5).fontsize(20);
+			thirddigit = result_percentage.toString().substring(0, 1).fontsize(20);
+			forthdigit = result_percentage.toString().substring(1, 2).fontsize(20);
+			fifthdigit = result_percentage.toString().substring(2, 3).fontsize(20);
+			sixthdigit = result_percentage.toString().substring(3, 4).fontsize(20);
+			seventhdigit = result_percentage.toString().substring(4, 5).fontsize(20);
 		} else if (result_length == '6') {
-			seconddigit = result.toString().substring(0, 1).fontsize(20);
-			thirddigit = result.toString().substring(1, 2).fontsize(20);
-			forthdigit = result.toString().substring(2, 3).fontsize(20);
-			fifthdigit = result.toString().substring(3, 4).fontsize(20);
-			sixthdigit = result.toString().substring(4, 5).fontsize(20);
-			seventhdigit = result.toString().substring(5, 6).fontsize(20);
+			seconddigit = result_percentage.toString().substring(0, 1).fontsize(20);
+			thirddigit = result_percentage.toString().substring(1, 2).fontsize(20);
+			forthdigit = result_percentage.toString().substring(2, 3).fontsize(20);
+			fifthdigit = result_percentage.toString().substring(3, 4).fontsize(20);
+			sixthdigit = result_percentage.toString().substring(4, 5).fontsize(20);
+			seventhdigit = result_percentage.toString().substring(5, 6).fontsize(20);
 		} 
 		
 		document.getElementById("result").innerHTML = firstdigit;
@@ -952,7 +954,9 @@
 		//document.getElementById("result7").innerHTML = " pax";
 			
 		total_l_result1 = parseInt(localStorage.getItem("total_l"));
-		let total_l_result_length = total_l_result1.toString().length;
+		let total_l_result_percentage = (total_l_result1 / 4000) * 100;
+		total_l_result_percentage = parseInt(total_l_result_percentage);
+		let total_l_result_length = total_l_result_percentage.toString().length;
 		let total_l_firstdigit = '0'.fontsize(20);
 		let total_l_seconddigit = '0'.fontsize(20);
 		let total_l_thirddigit = '0'.fontsize(20);
@@ -961,32 +965,32 @@
 		let total_l_sixthdigit = '0'.fontsize(20);
 		
 		if (total_l_result_length == '1') {
-			total_l_seventhdigit = total_l_result1.toString().substring(0, 1).fontsize(20);
+			total_l_seventhdigit = total_l_result_percentage.toString().substring(0, 1).fontsize(20);
 		} else if (total_l_result_length == '2') {
-			total_l_sixthdigit = total_l_result1.toString().substring(0, 1).fontsize(20);
-			total_l_seventhdigit = total_l_result1.toString().substring(1, 2).fontsize(20);
+			total_l_sixthdigit = total_l_result_percentage.toString().substring(0, 1).fontsize(20);
+			total_l_seventhdigit = total_l_result_percentage.toString().substring(1, 2).fontsize(20);
 		} else if (total_l_result_length == '3') {
-			total_l_fifthdigit = total_l_result1.toString().substring(0, 1).fontsize(20);
-			total_l_sixthdigit = total_l_result1.toString().substring(1, 2).fontsize(20);
-			total_l_seventhdigit = total_l_result1.toString().substring(2, 3).fontsize(20);
+			total_l_fifthdigit = total_l_result_percentage.toString().substring(0, 1).fontsize(20);
+			total_l_sixthdigit = total_l_result_percentage.toString().substring(1, 2).fontsize(20);
+			total_l_seventhdigit = total_l_result_percentage.toString().substring(2, 3).fontsize(20);
 		} else if (total_l_result_length == '4') {
-			total_l_forthdigit = total_l_result1.toString().substring(0, 1).fontsize(20);
-			total_l_fifthdigit = total_l_result1.toString().substring(1, 2).fontsize(20);
-			total_l_sixthdigit = total_l_result1.toString().substring(2, 3).fontsize(20);
-			total_l_seventhdigit = total_l_result1.toString().substring(3, 4).fontsize(20);
+			total_l_forthdigit = total_l_result_percentage.toString().substring(0, 1).fontsize(20);
+			total_l_fifthdigit = total_l_result_percentage.toString().substring(1, 2).fontsize(20);
+			total_l_sixthdigit = total_l_result_percentage.toString().substring(2, 3).fontsize(20);
+			total_l_seventhdigit = total_l_result_percentage.toString().substring(3, 4).fontsize(20);
 		} else if (total_l_result_length == '5') {
-			total_l_thirddigit = total_l_result1.toString().substring(0, 1).fontsize(20);
-			total_l_forthdigit = total_l_result1.toString().substring(1, 2).fontsize(20);
-			total_l_fifthdigit = total_l_result1.toString().substring(2, 3).fontsize(20);
-			total_l_sixthdigit = total_l_result1.toString().substring(3, 4).fontsize(20);
-			total_l_total_l_seventhdigit = total_l_result1.toString().substring(4, 5).fontsize(20);
+			total_l_thirddigit = total_l_result_percentage.toString().substring(0, 1).fontsize(20);
+			total_l_forthdigit = total_l_result_percentage.toString().substring(1, 2).fontsize(20);
+			total_l_fifthdigit = total_l_result_percentage.toString().substring(2, 3).fontsize(20);
+			total_l_sixthdigit = total_l_result_percentage.toString().substring(3, 4).fontsize(20);
+			total_l_total_l_seventhdigit = total_l_result_percentage.toString().substring(4, 5).fontsize(20);
 		} else if (total_l_result_length == '6') {
-			total_l_seconddigit = total_l_result1.toString().substring(0, 1).fontsize(20);
-			total_l_thirddigit = total_l_result1.toString().substring(1, 2).fontsize(20);
-			total_l_forthdigit = total_l_result1.toString().substring(2, 3).fontsize(20);
-			total_l_fifthdigit = total_l_result1.toString().substring(3, 4).fontsize(20);
-			total_l_sixthdigit = total_l_result1.toString().substring(4, 5).fontsize(20);
-			total_l_seventhdigit = total_l_result1.toString().substring(5, 6).fontsize(20);
+			total_l_seconddigit = total_l_result_percentage.toString().substring(0, 1).fontsize(20);
+			total_l_thirddigit = total_l_result_percentage.toString().substring(1, 2).fontsize(20);
+			total_l_forthdigit = total_l_result_percentage.toString().substring(2, 3).fontsize(20);
+			total_l_fifthdigit = total_l_result_percentage.toString().substring(3, 4).fontsize(20);
+			total_l_sixthdigit = total_l_result_percentage.toString().substring(4, 5).fontsize(20);
+			total_l_seventhdigit = total_l_result_percentage.toString().substring(5, 6).fontsize(20);
 		} 
 		document.getElementById("total_l_result").innerHTML = total_l_firstdigit;
 		document.getElementById("total_l_result1").innerHTML = total_l_seconddigit;
@@ -998,7 +1002,11 @@
 		//document.getElementById("total_l_result4").innerHTML = " pax";
 		
 		total_r_result2 = parseInt(localStorage.getItem("total_r"));
-		let total_r_result_length = total_r_result2.toString().length;
+		
+		
+		let total_r_result_percentage = (total_r_result2 / 4000) * 100;
+		total_r_result_percentage = parseInt(total_r_result_percentage);
+		let total_r_result_length = total_r_result_percentage.toString().length;
 		let total_r_firstdigit = '0'.fontsize(20);
 		let total_r_seconddigit = '0'.fontsize(20);
 		let total_r_thirddigit = '0'.fontsize(20);
@@ -1007,32 +1015,32 @@
 		let total_r_sixthdigit = '0'.fontsize(20);
 		
 		if (total_r_result_length == '1') {
-			total_r_seventhdigit = total_r_result2.toString().substring(0, 1).fontsize(20);
+			total_r_seventhdigit = total_r_result_percentage.toString().substring(0, 1).fontsize(20);
 		} else if (total_l_result_length == '2') {
-			total_r_sixthdigit = total_r_result2.toString().substring(0, 1).fontsize(20);
-			total_r_seventhdigit = total_r_result2.toString().substring(1, 2).fontsize(20);
+			total_r_sixthdigit = total_r_result_percentage.toString().substring(0, 1).fontsize(20);
+			total_r_seventhdigit = total_r_result_percentage.toString().substring(1, 2).fontsize(20);
 		} else if (total_l_result_length == '3') {
-			total_r_fifthdigit = total_r_result2.toString().substring(0, 1).fontsize(20);
-			total_r_sixthdigit = total_r_result2.toString().substring(1, 2).fontsize(20);
-			total_r_seventhdigit = total_r_result2.toString().substring(2, 3).fontsize(20);
+			total_r_fifthdigit = total_r_result_percentage.toString().substring(0, 1).fontsize(20);
+			total_r_sixthdigit = total_r_result_percentage.toString().substring(1, 2).fontsize(20);
+			total_r_seventhdigit = total_r_result_percentage.toString().substring(2, 3).fontsize(20);
 		} else if (total_l_result_length == '4') {
-			total_r_forthdigit = total_r_result2.toString().substring(0, 1).fontsize(20);
-			total_r_fifthdigit = total_r_result2.toString().substring(1, 2).fontsize(20);
-			total_r_sixthdigit = total_r_result2.toString().substring(2, 3).fontsize(20);
-			total_r_seventhdigit = total_r_result2.toString().substring(3, 4).fontsize(20);
+			total_r_forthdigit = total_r_result_percentage.toString().substring(0, 1).fontsize(20);
+			total_r_fifthdigit = total_r_result_percentage.toString().substring(1, 2).fontsize(20);
+			total_r_sixthdigit = total_r_result_percentage.toString().substring(2, 3).fontsize(20);
+			total_r_seventhdigit = total_r_result_percentage.toString().substring(3, 4).fontsize(20);
 		} else if (total_l_result_length == '5') {
-			total_r_thirddigit = total_r_result2.toString().substring(0, 1).fontsize(20);
-			total_r_forthdigit = total_r_result2.toString().substring(1, 2).fontsize(20);
-			total_r_fifthdigit = total_r_result2.toString().substring(2, 3).fontsize(20);
-			total_r_sixthdigit = total_r_result2.toString().substring(3, 4).fontsize(20);
-			total_r_total_l_seventhdigit = total_r_result2.toString().substring(4, 5).fontsize(20);
+			total_r_thirddigit = total_r_result_percentage.toString().substring(0, 1).fontsize(20);
+			total_r_forthdigit = total_r_result_percentage.toString().substring(1, 2).fontsize(20);
+			total_r_fifthdigit = total_r_result_percentage.toString().substring(2, 3).fontsize(20);
+			total_r_sixthdigit = total_r_result_percentage.toString().substring(3, 4).fontsize(20);
+			total_r_total_l_seventhdigit = total_r_result_percentage.toString().substring(4, 5).fontsize(20);
 		} else if (total_l_result_length == '6') {
-			total_r_seconddigit = total_r_result2.toString().substring(0, 1).fontsize(20);
-			total_r_thirddigit = total_r_result2.toString().substring(1, 2).fontsize(20);
-			total_r_forthdigit = total_r_result2.toString().substring(2, 3).fontsize(20);
-			total_r_fifthdigit = total_r_result2.toString().substring(3, 4).fontsize(20);
-			total_r_sixthdigit = total_r_result2.toString().substring(4, 5).fontsize(20);
-			total_r_seventhdigit = total_r_result2.toString().substring(5, 6).fontsize(20);
+			total_r_seconddigit = total_r_result_percentage.toString().substring(0, 1).fontsize(20);
+			total_r_thirddigit = total_r_result_percentage.toString().substring(1, 2).fontsize(20);
+			total_r_forthdigit = total_r_result_percentage.toString().substring(2, 3).fontsize(20);
+			total_r_fifthdigit = total_r_result_percentage.toString().substring(3, 4).fontsize(20);
+			total_r_sixthdigit = total_r_result_percentage.toString().substring(4, 5).fontsize(20);
+			total_r_seventhdigit = total_r_result_percentage.toString().substring(5, 6).fontsize(20);
 		} 
 		
 		document.getElementById("total_r_result").innerHTML = total_r_firstdigit;
