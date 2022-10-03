@@ -3843,3 +3843,19 @@ ol {
     height: 300px;
     text-align: center;
 }
+
+@font-face {
+	font-family: 'DIN 2014 Regular';
+    src: url('/fonts/DIN 2014 Regular.otf') format('truetype'),
+    src: url('fonts/DIN 2014 Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'DIN 2014 Bold';
+    src: url('/fonts/DIN 2014 Bold.otf') format('truetype'),
+    src: url('fonts/DIN 2014 Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
