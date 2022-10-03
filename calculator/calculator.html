@@ -212,7 +212,7 @@
 									<td class="shoping__cart__item">
 										<img width="200px" src="../assets/images/collection/Highrise.png" alt="">
 										<p>PS/day(I):0, PS/day(L):0 <br />
-											PS/day(R):0, Waste(KG) daily:0</p>
+											PS/day(R):0, Waste(KG) daily:12.4</p>
 									</td>
 									<td class="shoping__cart__quantity">
 										<div class="quantity">
@@ -235,7 +235,7 @@
 									<td class="shoping__cart__item">
 										<img width="200px" src="../assets/images/collection/Lowrise.png" alt="">
 										<p>PS/day(I):0, PS/day(L):0 <br />
-											PS/day(R):0, Waste(KG) daily:0</p>
+											PS/day(R):0, Waste(KG) daily:8.2</p>
 									</td>
 									<td class="shoping__cart__quantity">
 										<div class="quantity">
@@ -565,9 +565,7 @@
 									<td><span id="result1"></td>
 									<td><span id="result2"></td>
 									<td><span id="result3"></td>
-									<td><span id="result4"></td>
-									<td><span id="result5"></td>
-									<td><span id="result6"><span id="result7"></td>
+									<td><span id="result4"><span id="result5"></td>
 								</tr>
 							</table>
 						</div>
@@ -583,9 +581,7 @@
 									<td><span id="total_l_result1"></td>
 									<td><span id="total_l_result2"></td>
 									<td><span id="total_l_result3"></td>
-									<td><span id="total_l_result4"></td>
-									<td><span id="total_l_result5"></td>
-									<td><span id="total_l_result6"><span id="total_l_result7"></td>
+									<td><span id="total_l_result4"><span id="total_l_result5"></td>
 								</tr>
 							</table>
 						</div>
@@ -601,16 +597,14 @@
 									<td><span id="total_r_result1"></td>
 									<td><span id="total_r_result2"></td>
 									<td><span id="total_r_result3"></td>
-									<td><span id="total_r_result4"></td>
-									<td><span id="total_r_result5"></td>
-									<td><span id="total_r_result6"><span id="total_r_result7"></td>
+									<td><span id="total_r_result4"><span id="total_r_result5"></td>
 								</tr>
 							</table>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-5">
-							<p style="font-size:18px;color:#143C39";>Waste produced daily (kg)</p>
+							<p style="font-size:18px;color:#143C39";>Waste daily (kg) equivalent to no. taxi</p>
 						</div>
 						<div class="col-7">
 							<table border="1">
@@ -619,9 +613,7 @@
 									<td><span id="total_waste_result1"></td>
 									<td><span id="total_waste_result2"></td>
 									<td><span id="total_waste_result3"></td>
-									<td><span id="total_waste_result4"></td>
-									<td><span id="total_waste_result5"></td>
-									<td><span id="total_waste_result6"><span id="total_waste_result7"></td>
+									<td><span id="total_waste_result4"><span id="total_waste_result5"></td>
 								</tr>
 							</table>
 						</div>
@@ -728,24 +720,24 @@
 		total_i = parseInt(localStorage.getItem("total_i")) + 0 * x;
 		total_l = parseInt(localStorage.getItem("total_l")) + 0 * x;
 		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
-		total_waste = parseInt(localStorage.getItem("total_waste")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 12.4 * x;
 		localStorage.setItem("total_i", total_i);
 		localStorage.setItem("total_l", total_l);
 		localStorage.setItem("total_r", total_r);
 		localStorage.setItem("total_waste", total_waste);
-		document.getElementById("subtotal6_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 0 * x;
+		document.getElementById("subtotal6_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 12.4 * x;
 	}
 	function handleValue7Change() {
 		var x = document.getElementById("blockcode7_no").value;
 		total_i = parseInt(localStorage.getItem("total_i")) + 0 * x;
 		total_l = parseInt(localStorage.getItem("total_l")) + 0 * x;
 		total_r = parseInt(localStorage.getItem("total_r")) + 0 * x;
-		total_waste = parseInt(localStorage.getItem("total_waste")) + 0 * x;
+		total_waste = parseInt(localStorage.getItem("total_waste")) + 8.2 * x;
 		localStorage.setItem("total_i", total_i);
 		localStorage.setItem("total_l", total_l);
 		localStorage.setItem("total_r", total_r);
 		localStorage.setItem("total_waste", total_waste);
-		document.getElementById("subtotal7_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 0 * x;
+		document.getElementById("subtotal7_impact").innerHTML = "PS/day(I): " + 0 * x + "<br/>" + "PS/day(L): " + 0 * x + "<br/>" + "PS/day(R): " + 0 * x + "<br/>" + "Waste(KG) daily: " + 8.2 * x;
 	}
 	function handleValue8Change() {
 		var x = document.getElementById("blockcode8_no").value;
@@ -905,7 +897,6 @@
 		let thirddigit = '0'.fontsize(20);
 		let forthdigit = '0'.fontsize(20);
 		let fifthdigit = '0'.fontsize(20);
-		let sixthdigit = '0'.fontsize(20);
 			/*
 		for (let i = 0; i < result_length; i++) {
 			if (result.substring(i,i+1) === 0) {
@@ -916,41 +907,32 @@
 		}
 		*/
 		if (result_length == '1') {
-			seventhdigit = result_percentage.toString().substring(0, 1).fontsize(20);
-		} else if (result_length == '2') {
-			sixthdigit = result_percentage.toString().substring(0, 1).fontsize(20);
-			seventhdigit = result_percentage.toString().substring(1, 2).fontsize(20);
-		} else if (result_length == '3') {
 			fifthdigit = result_percentage.toString().substring(0, 1).fontsize(20);
-			sixthdigit = result_percentage.toString().substring(1, 2).fontsize(20);
-			seventhdigit = result_percentage.toString().substring(2, 3).fontsize(20);
-		} else if (result_length == '4') {
+		} else if (result_length == '2') {
 			forthdigit = result_percentage.toString().substring(0, 1).fontsize(20);
 			fifthdigit = result_percentage.toString().substring(1, 2).fontsize(20);
-			sixthdigit = result_percentage.toString().substring(2, 3).fontsize(20);
-			seventhdigit = result_percentage.toString().substring(3, 4).fontsize(20);
-		} else if (result_length == '5') {
+		} else if (result_length == '3') {
 			thirddigit = result_percentage.toString().substring(0, 1).fontsize(20);
 			forthdigit = result_percentage.toString().substring(1, 2).fontsize(20);
 			fifthdigit = result_percentage.toString().substring(2, 3).fontsize(20);
-			sixthdigit = result_percentage.toString().substring(3, 4).fontsize(20);
-			seventhdigit = result_percentage.toString().substring(4, 5).fontsize(20);
-		} else if (result_length == '6') {
+		} else if (result_length == '4') {
 			seconddigit = result_percentage.toString().substring(0, 1).fontsize(20);
 			thirddigit = result_percentage.toString().substring(1, 2).fontsize(20);
 			forthdigit = result_percentage.toString().substring(2, 3).fontsize(20);
 			fifthdigit = result_percentage.toString().substring(3, 4).fontsize(20);
-			sixthdigit = result_percentage.toString().substring(4, 5).fontsize(20);
-			seventhdigit = result_percentage.toString().substring(5, 6).fontsize(20);
-		} 
+		} else if (result_length == '5') {
+			firstdigit = result_percentage.toString().substring(0, 1).fontsize(20);
+			seconddigit = result_percentage.toString().substring(1, 2).fontsize(20);
+			thirddigit = result_percentage.toString().substring(2, 3).fontsize(20);
+			forthdigit = result_percentage.toString().substring(3, 4).fontsize(20);
+			fifthdigit = result_percentage.toString().substring(4, 5).fontsize(20);
+		}
 		
 		document.getElementById("result").innerHTML = firstdigit;
 		document.getElementById("result1").innerHTML = seconddigit;
 		document.getElementById("result2").innerHTML = thirddigit;
 		document.getElementById("result3").innerHTML = forthdigit;
 		document.getElementById("result4").innerHTML = fifthdigit;
-		document.getElementById("result5").innerHTML = sixthdigit;
-		document.getElementById("result6").innerHTML = seventhdigit;
 		//document.getElementById("result7").innerHTML = " pax";
 			
 		total_l_result1 = parseInt(localStorage.getItem("total_l"));
@@ -962,43 +944,34 @@
 		let total_l_thirddigit = '0'.fontsize(20);
 		let total_l_forthdigit = '0'.fontsize(20);
 		let total_l_fifthdigit = '0'.fontsize(20);
-		let total_l_sixthdigit = '0'.fontsize(20);
 		
 		if (total_l_result_length == '1') {
-			total_l_seventhdigit = total_l_result_percentage.toString().substring(0, 1).fontsize(20);
-		} else if (total_l_result_length == '2') {
-			total_l_sixthdigit = total_l_result_percentage.toString().substring(0, 1).fontsize(20);
-			total_l_seventhdigit = total_l_result_percentage.toString().substring(1, 2).fontsize(20);
-		} else if (total_l_result_length == '3') {
 			total_l_fifthdigit = total_l_result_percentage.toString().substring(0, 1).fontsize(20);
-			total_l_sixthdigit = total_l_result_percentage.toString().substring(1, 2).fontsize(20);
-			total_l_seventhdigit = total_l_result_percentage.toString().substring(2, 3).fontsize(20);
-		} else if (total_l_result_length == '4') {
+		} else if (total_l_result_length == '2') {
 			total_l_forthdigit = total_l_result_percentage.toString().substring(0, 1).fontsize(20);
 			total_l_fifthdigit = total_l_result_percentage.toString().substring(1, 2).fontsize(20);
-			total_l_sixthdigit = total_l_result_percentage.toString().substring(2, 3).fontsize(20);
-			total_l_seventhdigit = total_l_result_percentage.toString().substring(3, 4).fontsize(20);
-		} else if (total_l_result_length == '5') {
+		} else if (total_l_result_length == '3') {
 			total_l_thirddigit = total_l_result_percentage.toString().substring(0, 1).fontsize(20);
 			total_l_forthdigit = total_l_result_percentage.toString().substring(1, 2).fontsize(20);
 			total_l_fifthdigit = total_l_result_percentage.toString().substring(2, 3).fontsize(20);
-			total_l_sixthdigit = total_l_result_percentage.toString().substring(3, 4).fontsize(20);
-			total_l_total_l_seventhdigit = total_l_result_percentage.toString().substring(4, 5).fontsize(20);
-		} else if (total_l_result_length == '6') {
+		} else if (total_l_result_length == '4') {
 			total_l_seconddigit = total_l_result_percentage.toString().substring(0, 1).fontsize(20);
 			total_l_thirddigit = total_l_result_percentage.toString().substring(1, 2).fontsize(20);
 			total_l_forthdigit = total_l_result_percentage.toString().substring(2, 3).fontsize(20);
 			total_l_fifthdigit = total_l_result_percentage.toString().substring(3, 4).fontsize(20);
-			total_l_sixthdigit = total_l_result_percentage.toString().substring(4, 5).fontsize(20);
-			total_l_seventhdigit = total_l_result_percentage.toString().substring(5, 6).fontsize(20);
+		} else if (total_l_result_length == '5') {
+			total_l_firstdigit = total_l_result_percentage.toString().substring(0, 1).fontsize(20);
+			total_l_seconddigit = total_l_result_percentage.toString().substring(1, 2).fontsize(20);
+			total_l_thirddigit = total_l_result_percentage.toString().substring(2, 3).fontsize(20);
+			total_l_forthdigit = total_l_result_percentage.toString().substring(3, 4).fontsize(20);
+			total_l_fifthdigit = total_l_result_percentage.toString().substring(4, 5).fontsize(20);
 		} 
+		
 		document.getElementById("total_l_result").innerHTML = total_l_firstdigit;
 		document.getElementById("total_l_result1").innerHTML = total_l_seconddigit;
 		document.getElementById("total_l_result2").innerHTML = total_l_thirddigit;
 		document.getElementById("total_l_result3").innerHTML = total_l_forthdigit;
 		document.getElementById("total_l_result4").innerHTML = total_l_fifthdigit;
-		document.getElementById("total_l_result5").innerHTML = total_l_sixthdigit;
-		document.getElementById("total_l_result6").innerHTML = total_l_seventhdigit;
 		//document.getElementById("total_l_result4").innerHTML = " pax";
 		
 		total_r_result2 = parseInt(localStorage.getItem("total_r"));
@@ -1012,91 +985,74 @@
 		let total_r_thirddigit = '0'.fontsize(20);
 		let total_r_forthdigit = '0'.fontsize(20);
 		let total_r_fifthdigit = '0'.fontsize(20);
-		let total_r_sixthdigit = '0'.fontsize(20);
 		
 		if (total_r_result_length == '1') {
-			total_r_seventhdigit = total_r_result_percentage.toString().substring(0, 1).fontsize(20);
-		} else if (total_l_result_length == '2') {
-			total_r_sixthdigit = total_r_result_percentage.toString().substring(0, 1).fontsize(20);
-			total_r_seventhdigit = total_r_result_percentage.toString().substring(1, 2).fontsize(20);
-		} else if (total_l_result_length == '3') {
 			total_r_fifthdigit = total_r_result_percentage.toString().substring(0, 1).fontsize(20);
-			total_r_sixthdigit = total_r_result_percentage.toString().substring(1, 2).fontsize(20);
-			total_r_seventhdigit = total_r_result_percentage.toString().substring(2, 3).fontsize(20);
-		} else if (total_l_result_length == '4') {
+		} else if (total_l_result_length == '2') {
 			total_r_forthdigit = total_r_result_percentage.toString().substring(0, 1).fontsize(20);
 			total_r_fifthdigit = total_r_result_percentage.toString().substring(1, 2).fontsize(20);
-			total_r_sixthdigit = total_r_result_percentage.toString().substring(2, 3).fontsize(20);
-			total_r_seventhdigit = total_r_result_percentage.toString().substring(3, 4).fontsize(20);
-		} else if (total_l_result_length == '5') {
+		} else if (total_l_result_length == '3') {
 			total_r_thirddigit = total_r_result_percentage.toString().substring(0, 1).fontsize(20);
 			total_r_forthdigit = total_r_result_percentage.toString().substring(1, 2).fontsize(20);
 			total_r_fifthdigit = total_r_result_percentage.toString().substring(2, 3).fontsize(20);
-			total_r_sixthdigit = total_r_result_percentage.toString().substring(3, 4).fontsize(20);
-			total_r_total_l_seventhdigit = total_r_result_percentage.toString().substring(4, 5).fontsize(20);
-		} else if (total_l_result_length == '6') {
+		} else if (total_l_result_length == '4') {
 			total_r_seconddigit = total_r_result_percentage.toString().substring(0, 1).fontsize(20);
 			total_r_thirddigit = total_r_result_percentage.toString().substring(1, 2).fontsize(20);
 			total_r_forthdigit = total_r_result_percentage.toString().substring(2, 3).fontsize(20);
 			total_r_fifthdigit = total_r_result_percentage.toString().substring(3, 4).fontsize(20);
-			total_r_sixthdigit = total_r_result_percentage.toString().substring(4, 5).fontsize(20);
-			total_r_seventhdigit = total_r_result_percentage.toString().substring(5, 6).fontsize(20);
-		} 
+		} else if (total_l_result_length == '5') {
+			total_r_firstdigit = total_r_result_percentage.toString().substring(0, 1).fontsize(20);
+			total_r_seconddigit = total_r_result_percentage.toString().substring(1, 2).fontsize(20);
+			total_r_thirddigit = total_r_result_percentage.toString().substring(2, 3).fontsize(20);
+			total_r_forthdigit = total_r_result_percentage.toString().substring(3, 4).fontsize(20);
+			total_r_fifthdigit = total_r_result_percentage.toString().substring(4, 5).fontsize(20);
+		}
 		
 		document.getElementById("total_r_result").innerHTML = total_r_firstdigit;
 		document.getElementById("total_r_result1").innerHTML = total_r_seconddigit;
 		document.getElementById("total_r_result2").innerHTML = total_r_thirddigit;
 		document.getElementById("total_r_result3").innerHTML = total_r_forthdigit;
 		document.getElementById("total_r_result4").innerHTML = total_r_fifthdigit;
-		document.getElementById("total_r_result5").innerHTML = total_r_sixthdigit;
-		document.getElementById("total_r_result6").innerHTML = total_r_seventhdigit;
 		//document.getElementById("total_r_result4").innerHTML = " pax";
 		
 		total_waste_result3 = parseInt(localStorage.getItem("total_waste"));
-		let total_waste_result_length = total_waste_result3.toString().length;
+		let total_waste_taxi = (total_waste_result3 / 1400);
+		total_waste_taxi = parseInt(total_waste_taxi);
+
+		let total_waste_result_length = total_waste_taxi.toString().length;
 		let total_waste_firstdigit = '0'.fontsize(20);
 		let total_waste_seconddigit = '0'.fontsize(20);
 		let total_waste_thirddigit = '0'.fontsize(20);
 		let total_waste_forthdigit = '0'.fontsize(20);
 		let total_waste_fifthdigit = '0'.fontsize(20);
-		let total_waste_sixthdigit = '0'.fontsize(20);
 		
 		if (total_waste_result_length == '1') {
-			total_waste_seventhdigit = total_waste_result3.toString().substring(0, 1).fontsize(20);
-		} else if (total_waste_result_length == '2') {
-			total_waste_sixthdigit = total_waste_result3.toString().substring(0, 1).fontsize(20);
-			total_waste_seventhdigit = total_waste_result3.toString().substring(1, 2).fontsize(20);
-		} else if (total_waste_result_length == '3') {
 			total_waste_fifthdigit = total_waste_result3.toString().substring(0, 1).fontsize(20);
-			total_waste_sixthdigit = total_waste_result3.toString().substring(1, 2).fontsize(20);
-			total_waste_seventhdigit = total_waste_result3.toString().substring(2, 3).fontsize(20);
-		} else if (total_waste_result_length == '4') {
+		} else if (total_waste_result_length == '2') {
 			total_waste_forthdigit = total_waste_result3.toString().substring(0, 1).fontsize(20);
 			total_waste_fifthdigit = total_waste_result3.toString().substring(1, 2).fontsize(20);
-			total_waste_sixthdigit = total_waste_result3.toString().substring(2, 3).fontsize(20);
-			total_waste_seventhdigit = total_waste_result3.toString().substring(3, 4).fontsize(20);
-		} else if (total_waste_result_length) {
+		} else if (total_waste_result_length == '3') {
 			total_waste_thirddigit = total_waste_result3.toString().substring(0, 1).fontsize(20);
 			total_waste_forthdigit = total_waste_result3.toString().substring(1, 2).fontsize(20);
 			total_waste_fifthdigit = total_waste_result3.toString().substring(2, 3).fontsize(20);
-			total_waste_sixthdigit = total_waste_result3.toString().substring(3, 4).fontsize(20);
-			total_waste_total_l_seventhdigit = total_waste_result3.toString().substring(4, 5).fontsize(20);
-		} else if (total_waste_result_length == '6') {
+		} else if (total_waste_result_length == '4') {
 			total_waste_seconddigit = total_waste_result3.toString().substring(0, 1).fontsize(20);
 			total_waste_thirddigit = total_waste_result3.toString().substring(1, 2).fontsize(20);
 			total_waste_forthdigit = total_waste_result3.toString().substring(2, 3).fontsize(20);
 			total_waste_fifthdigit = total_waste_result3.toString().substring(3, 4).fontsize(20);
-			total_waste_sixthdigit = total_waste_result3.toString().substring(4, 5).fontsize(20);
-			total_waste_seventhdigit = total_waste_result3.toString().substring(5, 6).fontsize(20);
-		} 
+		} else if (total_waste_result_length == '5') {
+			total_waste_firstdigit = total_waste_result3.toString().substring(0, 1).fontsize(20);
+			total_waste_seconddigit = total_waste_result3.toString().substring(1, 2).fontsize(20);
+			total_waste_thirddigit = total_waste_result3.toString().substring(2, 3).fontsize(20);
+			total_waste_forthdigit = total_waste_result3.toString().substring(3, 4).fontsize(20);
+			total_waste_fifthdigit = total_waste_result3.toString().substring(4, 5).fontsize(20);
+		}
 		
 		document.getElementById("total_waste_result").innerHTML = total_waste_firstdigit;
 		document.getElementById("total_waste_result1").innerHTML = total_waste_seconddigit;
 		document.getElementById("total_waste_result2").innerHTML = total_waste_thirddigit;
 		document.getElementById("total_waste_result3").innerHTML = total_waste_forthdigit;
 		document.getElementById("total_waste_result4").innerHTML = total_waste_fifthdigit;
-		document.getElementById("total_waste_result5").innerHTML = total_waste_sixthdigit;
-		document.getElementById("total_waste_result6").innerHTML = total_waste_seventhdigit;
 		//document.getElementById("total_waste_result4").innerHTML = " kg";
 	}
 	</script>
