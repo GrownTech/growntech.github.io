@@ -32,6 +32,7 @@
                 </div>
             </div>
         </nav>
+		
         <!-- Header-->
         <header id="about" class="bg-light py-5">
             <div class="container px-5">
@@ -53,16 +54,50 @@
                     </div>	
 				</div>
 				<div class="row gx-5 justify-content-center">
-                    <div class="col-lg-8">
-						<h4 class="fw-bolder">Case Studies - Green Roof</h4>
-						<img class="img-fluid" src="assets/mainscreen.png" />
-						<h4 class="fw-bolder">Case Studies - Solar Panel</h4>
-						<img class="img-fluid" src="assets/solarpanel_mainscreen.png" />
-						<h4 class="fw-bolder">Case Studies - Green Roof + Solar Panel (Agrivoltaic)</h4>
-						<img class="img-fluid" src="assets/greenroof_solarpanelscreen.png" />
+                    <div class="col-lg-10">
+						<nav class="navbar navbar-expand-lg">
+							<div class="container px-5">
+								<div class="collapse navbar-collapse" id="navbarSupportedContent">
+									<!-- Nav tabs -->
+									<ul class="nav nav-tabs" id="myTab" role="tablist">
+										<li class="nav-item" role="presentation">
+											<button class="btn btn-outline-success" id="home-tab" data-bs-toggle="tab" data-bs-target="#greenroof" type="button" role="tab" aria-controls="home" aria-selected="true">Case Studies - Green Roof</button>
+										</li>
+										<li class="nav-item" role="presentation">
+											<button class="btn btn-outline-success" id="profile-tab" data-bs-toggle="tab" data-bs-target="#solarpanel" type="button" role="tab" aria-controls="profile" aria-selected="false">Case Studies - Solar Panel</button>
+										</li>
+										<li class="nav-item" role="presentation">
+											<button class="btn btn-outline-success" id="messages-tab" data-bs-toggle="tab" data-bs-target="#greenroof_solarpanel" type="button" role="tab" aria-controls="messages" aria-selected="false">Case Studies - Green Roof + Solar Panel (Agrivoltaic)</button>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</nav>
 					</div>
 				</div>
-            </div>
+				
+				<!-- add tab -->
+				<section class="content">
+					<div class="container-fluid">
+						<div class="col-lg-9" style="float:none;margin:auto;" >
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div class="tab-pane active" id="greenroof" role="tabpanel" aria-labelledby="home-tab">
+									<h4 class="fw-bolder">Case Studies - Green Roof</h4>
+									<img class="img-fluid" src="assets/mainscreen.png" />
+								</div>
+								<div class="tab-pane" id="solarpanel" role="tabpanel" aria-labelledby="profile-tab">
+									<h4 class="fw-bolder">Case Studies - Solar Panel</h4>
+									<img class="img-fluid" src="assets/solarpanel_mainscreen.png" />
+								</div>
+								<div class="tab-pane" id="greenroof_solarpanel" role="tabpanel" aria-labelledby="messages-tab">
+									<h4 class="fw-bolder">Case Studies - Green Roof + Solar Panel (Agrivoltaic)</h4>
+									<img class="img-fluid" src="assets/greenroof_solarpanelscreen.png" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
         </header>
         <!-- Contact section-->
         <section id="contact-forms" class="bg-light py-5">
@@ -99,5 +134,13 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+		<script>
+		$(".nav-tabs a[data-toggle=tab]").on("click", function(e) {
+		  if ($(this).hasClass("disabled")) {
+			e.preventDefault();
+			return false;
+		  }
+		});
+	</script>
     </body>
 </html>
